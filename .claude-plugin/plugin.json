@@ -1,0 +1,12 @@
+{
+  "name": "nuxt-fullstack-scaffold",
+  "description": "Scaffold production-ready Nuxt 3 apps with Tailwind, Vitest, ESLint, and optional i18n, SQLite (Drizzle), or Supabase.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rga-rt"
+  },
+  "homepage": "https://github.com/rga-rt/claude-nuxt-fullstack-scaffold",
+  "repository": "https://github.com/rga-rt/claude-nuxt-fullstack-scaffold",
+  "license": "MIT",
+  "keywords": ["nuxt", "nuxt3", "scaffold", "tailwindcss", "i18n", "sqlite", "drizzle", "supabase", "vitest"]
+}

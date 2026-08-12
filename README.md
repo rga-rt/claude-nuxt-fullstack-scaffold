@@ -11,10 +11,22 @@ A Claude skill for quickly scaffolding production-ready Nuxt 3 applications with
 
 ## 🚀 Quick Start
 
-### Installation (Claude Desktop or claude.ai)
+### Install in Claude Code (plugin marketplace)
+
+```bash
+# 1. Add this repo as a plugin marketplace
+/plugin marketplace add rga-rt/claude-nuxt-fullstack-scaffold
+
+# 2. Install the plugin
+/plugin install nuxt-fullstack-scaffold@claude-nuxt-scaffold
+```
+
+Then prompt: **"Scaffold a new Nuxt project"**. Update later with `/plugin marketplace update claude-nuxt-scaffold`.
+
+### Install in Claude Desktop or claude.ai
 
 1. Clone or download this repository
-2. Copy `SKILL.md` to your Claude skills directory
+2. Copy `skills/nuxt-fullstack-scaffold/SKILL.md` to your Claude skills directory
 3. Enable the skill in Claude
 4. Prompt: **"Scaffold a new Nuxt project"**
 
@@ -42,7 +54,8 @@ When you use this skill, Claude will:
 
 ## 📦 What's Included
 
-- **SKILL.md** — The skill definition (use in Claude)
+- **skills/nuxt-fullstack-scaffold/SKILL.md** — The skill definition (use in Claude)
+- **.claude-plugin/** — Claude Code plugin + marketplace manifests
 - **examples/** — Example project structures for different configs
 - **docs/** — Setup guides for optional features
 - **LICENSE** — MIT
