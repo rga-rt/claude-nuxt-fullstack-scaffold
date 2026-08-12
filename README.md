@@ -243,9 +243,29 @@ Check the `examples/` folder for actual generated project outputs:
 - TypeScript (strict mode)
 
 **Optional:**
-- **i18n:** @nuxtjs/i18n v8
+- **i18n:** @nuxtjs/i18n v9
 - **SQLite:** better-sqlite3 + drizzle-orm
 - **Supabase:** @supabase/supabase-js + Pinia
+
+---
+
+## 🔄 Releasing updates
+
+Plugin versions are **pinned**, so installed users only receive changes when you bump the version. To ship an update:
+
+1. Make your edits (skill, examples, or docs).
+2. Bump the version in **both** places — they must match:
+   - `.claude-plugin/plugin.json` → `version`
+   - `.claude-plugin/marketplace.json` → the plugin entry's `version`
+3. Add an entry to [`CHANGELOG.md`](./CHANGELOG.md).
+4. Validate, tag, and push:
+   ```bash
+   claude plugin validate .
+   claude plugin tag .          # creates git tag nuxt-fullstack-scaffold--v<version>
+   git push && git push --tags
+   ```
+
+Users then pick up the update with `/plugin marketplace update claude-nuxt-scaffold`.
 
 ---
 
