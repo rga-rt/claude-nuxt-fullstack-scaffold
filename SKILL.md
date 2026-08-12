@@ -1,6 +1,6 @@
 ---
 name: claude-nuxt-fullstack-scaffold
-description: Create a production-ready Nuxt 3 project with Tailwind CSS, Vitest, ESLint, i18n, and optional local SQLite database. Use this skill whenever the user wants to scaffold a new Nuxt application with these tools pre-configured, avoiding manual setup of build tools, type safety, and database layers. Triggers include: "scaffold a Nuxt project," "new Nuxt app," "setup Nuxt + Tailwind," "create a Nuxt dashboard/tool," or any request to build a full-stack Nuxt application. Always offer optional i18n and database setup.
+description: 'Create a production-ready Nuxt 3 project with Tailwind CSS, Vitest, ESLint, i18n, and optional local SQLite database. Use this skill whenever the user wants to scaffold a new Nuxt application with these tools pre-configured, avoiding manual setup of build tools, type safety, and database layers. Triggers include: "scaffold a Nuxt project," "new Nuxt app," "setup Nuxt + Tailwind," "create a Nuxt dashboard/tool," or any request to build a full-stack Nuxt application. Always offer optional i18n and database setup.'
 ---
 
 # Nuxt Fullstack Scaffold
