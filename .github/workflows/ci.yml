@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  examples:
+    name: build & test (${{ matrix.example }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        example: [base-only, base-i18n-sqlite, base-i18n-supabase]
+    defaults:
+      run:
+        working-directory: examples/${{ matrix.example }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # The example projects intentionally ship without lockfiles, so cache the
+      # npm download folder keyed on each example's package.json.
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-${{ matrix.example }}-${{ hashFiles(format('examples/{0}/package.json', matrix.example)) }}
+          restore-keys: npm-${{ matrix.example }}-
+
+      - name: Install
+        run: npm install --no-audit --no-fund
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm run test
+
+  validate-plugin:
+    name: validate plugin manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate marketplace + plugin JSON
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/marketplace.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/plugin.json','utf8'))"
+          node -e "const p=require('./.claude-plugin/plugin.json').version, m=require('./.claude-plugin/marketplace.json').plugins[0].version; if(p!==m){console.error('Version mismatch: plugin.json '+p+' vs marketplace '+m); process.exit(1)} console.log('manifests OK, version '+p)"

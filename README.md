@@ -1,5 +1,6 @@
 # Claude Nuxt Fullstack Scaffold
 
+[![CI](https://github.com/rga-rt/claude-nuxt-fullstack-scaffold/actions/workflows/ci.yml/badge.svg)](https://github.com/rga-rt/claude-nuxt-fullstack-scaffold/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Nuxt](https://img.shields.io/badge/Nuxt-3-00DC82?logo=nuxtdotjs&logoColor=white)](https://nuxt.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
