@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "title": "Welcome to our platform",
+    "subtitle": "Built with Nuxt, Tailwind, and Supabase"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "enterEmail": "Enter your email",
+    "sendLink": "Send magic link",
+    "checkEmail": "Check your email for the login link",
+    "loggedInAs": "Logged in as"
+  },
+  "blog": {
+    "title": "Blog posts",
+    "noPostsYet": "No posts published yet",
+    "readMore": "Read more"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong"
+  }
+}

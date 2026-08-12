@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "dashboard": "Panel de control"
+  },
+  "hero": {
+    "title": "Bienvenido a nuestra plataforma",
+    "subtitle": "Construido con Nuxt, Tailwind y Supabase"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "enterEmail": "Ingresa tu correo",
+    "sendLink": "Enviar enlace mágico",
+    "checkEmail": "Revisa tu correo para el enlace de inicio de sesión",
+    "loggedInAs": "Conectado como"
+  },
+  "blog": {
+    "title": "Artículos del blog",
+    "noPostsYet": "Sin artículos publicados aún",
+    "readMore": "Leer más"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal"
+  }
+}

@@ -1,0 +1,258 @@
+# Claude Nuxt Fullstack Scaffold
+
+A Claude skill for quickly scaffolding production-ready Nuxt 3 applications with **optional** i18n, SQLite, or Supabase database integration.
+
+## 🚀 Quick Start
+
+### Installation (Claude Desktop or claude.ai)
+
+1. Clone or download this repository
+2. Copy `SKILL.md` to your Claude skills directory
+3. Enable the skill in Claude
+4. Prompt: **"Scaffold a new Nuxt project"**
+
+### What Gets Generated
+
+When you use this skill, Claude will:
+
+1. **Ask you** about your project needs:
+   - Project name
+   - Want i18n? (yes/no)
+   - Want a database? (none / SQLite / Supabase)
+
+2. **Generate** a complete Nuxt 3 project with:
+   - ✅ Nuxt 3 + TypeScript
+   - ✅ Tailwind CSS (pre-configured)
+   - ✅ Vitest + testing utilities
+   - ✅ ESLint + Prettier
+   - ✅ (Optional) i18n with route prefixes + locale switcher
+   - ✅ (Optional) SQLite + Drizzle ORM for local DB
+   - ✅ (Optional) Supabase for managed Postgres + Auth
+
+3. **Provide** setup instructions you can follow locally
+
+---
+
+## 📦 What's Included
+
+- **SKILL.md** — The skill definition (use in Claude)
+- **examples/** — Example project structures for different configs
+- **docs/** — Setup guides for optional features
+- **LICENSE** — MIT
+
+---
+
+## 💡 Usage Examples
+
+### Example 1: Base Stack Only
+```
+User: Scaffold a new Nuxt project called my-app
+
+Claude will generate:
+→ Nuxt 3 + Tailwind + Vitest + ESLint
+→ Ready to run npm install && npm run dev
+```
+
+### Example 2: Base + i18n + SQLite
+```
+User: Scaffold a blog with English and Spanish, plus a local database
+
+Claude will generate:
+→ Nuxt 3 + Tailwind + Vitest + ESLint
+→ i18n with /en/* and /es/* routes
+→ SQLite + Drizzle with posts, authors, tags tables
+→ Example API routes (CRUD)
+→ Seed script for demo data
+```
+
+### Example 3: Base + i18n + Supabase
+```
+User: Scaffold a SaaS app with Supabase and multi-language support
+
+Claude will generate:
+→ Nuxt 3 + Tailwind + Vitest + ESLint
+→ i18n configured
+→ Supabase client setup + RLS policies
+→ Magic link authentication
+→ Example posts + comments tables
+→ Auth components (login, logout, user status)
+```
+
+---
+
+## 🗂️ Project Structure
+
+Each generated project follows this structure:
+
+```
+my-app/
+├── app.vue
+├── nuxt.config.ts          # Nuxt config (includes i18n if enabled)
+├── tailwind.config.ts       # Tailwind config
+├── vitest.config.ts         # Vitest config
+├── .eslintrc.cjs            # ESLint config
+├── drizzle.config.ts        # (SQLite only)
+├── i18n.config.ts           # (i18n only)
+├── package.json
+├── tsconfig.json
+├── pages/
+│   └── index.vue
+├── components/
+│   ├── HelloWorld.vue
+│   └── LocaleSwitcher.vue   # (i18n only)
+├── server/
+│   ├── api/
+│   │   ├── health.ts
+│   │   ├── posts.ts         # (Database only)
+│   │   └── auth/
+│   │       ├── login.ts     # (Supabase only)
+│   │       └── logout.ts    # (Supabase only)
+│   ├── db/
+│   │   ├── schema.ts        # (SQLite only)
+│   │   ├── index.ts         # (SQLite only)
+│   │   └── seed.ts          # (SQLite only)
+│   └── utils/
+│       └── supabase.ts      # (Supabase only)
+├── locales/
+│   ├── en.json              # (i18n only)
+│   └── es.json              # (i18n only)
+├── stores/
+│   └── auth.ts              # (Supabase only)
+├── tests/
+│   ├── components/
+│   │   └── HelloWorld.test.ts
+│   └── server/
+│       └── api/
+│           └── posts.test.ts # (Database only)
+├── data/
+│   └── app.db               # (SQLite only, gitignored)
+└── .gitignore
+```
+
+---
+
+## 🚀 Next Steps After Generation
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Set Up Database (if enabled)
+
+**SQLite:**
+```bash
+npm run db:push
+npm run db:seed  # optional
+npm run dev
+```
+
+**Supabase:**
+```bash
+# 1. Create free account at https://supabase.com
+# 2. Copy SUPABASE_URL and SUPABASE_ANON_KEY to .env.local
+# 3. Copy SQL schema into Supabase dashboard
+# 4. Enable RLS policies
+npm run dev
+```
+
+### 3. Start Development Server
+```bash
+npm run dev
+# Open http://localhost:3000
+```
+
+### 4. Run Tests
+```bash
+npm run test          # Run once
+npm run test:watch   # Watch mode
+npm run test:ui      # Open test dashboard
+```
+
+---
+
+## 🎯 Optional Features
+
+### i18n (Multi-language Support)
+
+Generated routes: `/en/page`, `/es/page`
+
+- Locale switcher component included
+- Translation files in `/locales/*.json`
+- Easily add more locales
+
+**Docs:** See `docs/i18n-setup.md`
+
+### SQLite (Local Database)
+
+Zero-config local database perfect for:
+- Development
+- Small side projects
+- Learning Drizzle ORM
+
+**Docs:** See `docs/sqlite-setup.md`
+
+### Supabase (Managed Postgres)
+
+Cloud database with built-in auth, perfect for:
+- Production apps
+- Team collaboration
+- Real-time features
+
+**Docs:** See `docs/supabase-setup.md`
+
+---
+
+## 📚 Examples
+
+Check the `examples/` folder for actual generated project outputs:
+
+- `examples/base-only/` — Just Nuxt + Tailwind + Vitest
+- `examples/base-i18n-sqlite/` — With i18n and SQLite
+- `examples/base-i18n-supabase/` — With i18n and Supabase
+
+---
+
+## 🔧 Tech Stack
+
+**Always Included:**
+- Nuxt 3
+- Tailwind CSS
+- Vitest
+- ESLint + Prettier
+- TypeScript (strict mode)
+
+**Optional:**
+- **i18n:** @nuxtjs/i18n v8
+- **SQLite:** better-sqlite3 + drizzle-orm
+- **Supabase:** @supabase/supabase-js + Pinia
+
+---
+
+## 📝 License
+
+MIT — Feel free to use, fork, and share!
+
+---
+
+## 🤝 Contributing
+
+Found a bug? Want to suggest a feature?
+
+1. Open an issue
+2. Fork and submit a PR
+3. Examples welcome!
+
+---
+
+## 🎓 Learn More
+
+- [Nuxt 3 Docs](https://nuxt.com)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Drizzle ORM](https://orm.drizzle.team)
+- [Supabase Docs](https://supabase.com/docs)
+- [Vitest Docs](https://vitest.dev)
+
+---
+
+**Happy scaffolding! 🚀**

@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "about": "Acerca de"
+  },
+  "hero": {
+    "title": "Bienvenido a mi blog",
+    "subtitle": "Historias en inglés y español"
+  },
+  "blog": {
+    "title": "Artículos del blog",
+    "noPostsYet": "Sin artículos publicados aún",
+    "readMore": "Leer más"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal"
+  }
+}
